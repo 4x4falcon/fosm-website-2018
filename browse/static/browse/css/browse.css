@@ -1,0 +1,39 @@
+#browse-map {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	right: 0px;
+	top: 43px;
+	width: 74%;
+	height: 600px;
+}
+
+#browse-data {
+	margin: 0;
+	padding: 10px;
+	position: absolute;
+	left: 0px;
+	top: 43px;
+	width: 24%;
+}
+
+.browse-heading {
+	color: #000000;
+	font: 20px arial, sans-serif;
+}
+
+.browse-body {
+	width: 100%;
+	color: #000000;
+	font: 15px arial, sans-serif;
+	text-align: justify;
+	text-justify: distribute;
+}
+
+.delete {
+	text-decoration: line-through;
+}
+
+
+
