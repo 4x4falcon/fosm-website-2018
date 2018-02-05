@@ -28,3 +28,6 @@ def getting_started(request):
 def whats_different(request):
     return render(request, 'frontpage/whats_different.html', {})
 
+def copyright(request):
+    return render(request, 'frontpage/copyright.html', {})
+

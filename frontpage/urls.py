@@ -10,4 +10,5 @@ urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^getting_started', views.getting_started, name='getting-started'),
 	url(r'^whats_different', views.whats_different, name='whats-different'),
+	url(r'^copyright', views.copyright, name='copyright'),
 ]
