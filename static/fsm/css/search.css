@@ -1,0 +1,47 @@
+#search {
+                visibility: hidden;
+                position: absolute;
+                top: 50px;
+                left: 10%;
+                height: 200px;
+                width: 300px;
+}
+
+#search_results {
+                visibility: hidden;
+                position: absolute;
+                top: 150px;
+                left: 10%;
+                width: 400px;
+		max-height: 400px;
+		background: #ffffff;
+		border: #ffffff;
+		border-radius: 10px;
+		padding: 10px;
+
+}
+
+
+#search_loader {
+		visibility: hidden;
+		position: absolute;
+		top: 80px;
+		left: 10%;
+		height: 50px;
+		width: 50px;
+		background:url(../images/waiting_animation_circle.gif) top left no-repeat;
+}
+
+
+#search_message {
+		visibility: hidden;
+		position: absolute;
+		top: 80px;
+		left: 10%;
+		height: 40px;
+		width: 80%;
+		background-color: #ffffff;
+		border: #ffffff;
+		border-radius: 10px;
+		padding: 10px;
+}

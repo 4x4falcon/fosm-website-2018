@@ -1,0 +1,138 @@
+<div id="cssmenu">
+	<ul>
+		<li class="active"><a id="map_fosm_org" href="javascript:void(0);"><span>
+
+{% if request.path == '/' %}
+map
+{% elif '/user' in request.path or '/contributor' in request.path  %}
+User
+{% elif '/node/' in request.path  %}
+Node
+{% elif '/way/' in request.path  %}
+Way
+{% elif '/relation/' in request.path  %}
+Relation
+{% elif '/changeset/' in request.path  %}
+Changeset
+{% elif 'getting_started' in request.path  %}
+Starting
+{% elif 'whats_different' in request.path  %}
+Difference
+{% else %}
+$nbsp;
+{% endif %}
+
+			</span></a>
+		</li>
+
+
+{% if user.is_authenticated %}
+
+
+		<li class="has-sub"><a href="javascript:void(0);"><span>{{ user.username }}</span></a>
+			<ul>
+			        <li class="dropdown">
+					<ul id="login-dp" class="dropdown-menu">
+						<li>
+							<div class="row">
+								<div class="col-md-12">
+
+									<p><a href="{% url 'oauth:oauth_manage' %}">OAuth settings</a></p>
+									<p><a href="{% url 'accounts:password_change' %}">Change password</a></p>
+									<p><a href="{% url 'logout' %}">Log out</a></p>
+								</div>
+							 </div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>		<!-- user authenticated dropdown -->
+
+{% else %}
+
+		<li class="has-sub"><a href="javascript:void(0);"><span>Login</span></a>
+			<ul>
+				<li class="dropdown">
+					<ul id="login-dp" class="dropdown-menu">
+						<li>
+							<div class="row">
+							<div class="col-md-12">
+							<form class="form" role="form" method="post" action="{% url 'login' %}" accept-charset="UTF-8" id="login-nav">
+							{% csrf_token %}
+								<div class="form-group">
+									<label class="sr-only" for="exampleInputEmail2">Username</label>
+									<input type="text" class="form-control" id="exampleInputEmail2" name="username" placeholder="Username" required>
+								</div>
+								<div class="form-group">
+									<label class="sr-only" for="exampleInputPassword2">Password</label>
+									<input type="password" class="form-control" id="exampleInputPassword2" name="password" placeholder="Password" required>
+<!--
+								<div class="help-block text-right">
+									<a href="">Forgot the password ?</a>
+								</div>
+-->
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+								</div>
+<!--
+								<div class="checkbox">
+									<label>
+										<input type="checkbox"> keep me logged-in
+									</label>
+								</div>
+-->
+							</form>
+							</div>
+							<div class="bottom text-center">
+								<p><a href="{% url 'register:index' %}">Register</a> <a href="{% url 'migrateusers:index' %}">Migrate fosm account</a></p>
+							</div>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>		<!-- login dropdown -->
+
+{% endif %}
+
+
+{% if request.path == '/' %}
+		<li><a id="fosm_org" onclick="_.box(&#39;fosm&#39;);" title="About fosm" href="javascript:void(0);"><span>Fosm</span></a>
+		</li>
+
+		<li class="has-sub"><a href="javascript:void(0);"><span>Help</span></a>
+			<ul>
+				<li><a id="wiki_anchor" title="fosm wiki" href="http://fosm.wikia.com/wiki/Fosm_Wiki" target="_new"><span>Wiki</span></a></li>
+				<li><a id="about_anchor" onclick="_.box(&#39;about&#39;);" title="About this server" href="javascript:void(0);"><span>About the servers</span></a></li>
+				<li class="last"><a id="help_info" onclick="_.box(&#39;help&#39;);" title="Help with the map" href="javascript:void(0);"><span>Help</span></a></li>
+			</ul>
+		</li>
+{% endif %}
+{% if '/user/' not in request.path and '/changeset/' not in request.path and 'getting_started' not in request.path and 'whats_different' not in request.path %}
+		<li class="has-sub"><a href="javascript:void(0);"><span>Edit</span></a>
+			<ul>
+				<li class="last"><a id="edit_in_josm" target="linkloader" href="javascript:void(0);"><span>edit in JOSM or Merkaartor</span></a></li>
+			</ul>
+		</li>
+{% endif %}
+{% if request.path == '/' %}
+		<li class="has-sub"><a href="javascript:void(0);"><span>Search</span></a>
+			<ul>
+				<li class="last"><a id="search_anchor" href="javascript:void(0);" onclick="displaySearch();"><span>Search</span></a></li>
+<!--
+				<li class="last"><a id="jump_to_anchor" onclick="_.box(&#39;jump_to&#39;);" href="javascript:void(0);"><span>jump to latitude/longitude</span></a></li>
+-->
+			</ul>
+		</li>
+{% endif %}
+
+{% if request.path != '/' %}
+		<li><a id="home_page" title="Frontpage" href="/"><span>Home</span></a>
+		</li>
+{% endif %}
+
+
+
+	</ul>
+</div>   <!-- menu -->

@@ -1,0 +1,29 @@
+<p>Front page</p>
+
+<p>This server is current in beta. Please test functionality but any edits will probably be lost eventually.</p>
+
+<p>Database status: {{db_status}}</p>
+
+<p>Api: <a href="{% url 'api:apibase' %}">{% url 'api:apibase' %}</a></p>
+
+
+{% if user.is_authenticated %}
+
+<p>Hi {{ user.username }}</p>
+
+<p><a href="{% url 'oauth:oauth_manage' %}">OAuth settings</a></p>
+
+<p><a href="{% url 'accounts:password_change' %}">Change password</a></p>
+
+<p><a href="{% url 'accounts:logout' %}">Log out</a></p>
+
+{% else %}
+<p><a href="{% url 'register:index' %}">Register</a> <a href="{% url 'migrateusers:index' %}">Migrate fosm account</a></p>
+
+<p><a href="{% url 'accounts:login' %}">Log in</a></p>
+{% endif %}
+
+<p><a href="{% url 'objectinfo:history' %}">Recent changesets in html format</a></p>
+
+<p><a href="{% url 'replication:replicate' %}">Replication data</a></p>
+
