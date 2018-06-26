@@ -22,10 +22,11 @@ var fosmSource = new ol.source.OSM ({
                 	        html: 'All maps and data &copy; <a href="http://fosm.org/">fosm.org</a>'}) 
 	        ],
 
-		url: 'http://map.fosm.org/default/{z}/{x}/{y}.png'
+		url: 'https://map.fosm.org/default/{z}/{x}/{y}.png'
 	});
 
 /*
+// these are for testing additional tile servers
 var map3Source = new ol.source.OSM ({
 	        attributions: [
         	        new ol.Attribution({
@@ -37,6 +38,7 @@ var map3Source = new ol.source.OSM ({
 */
 
 /*
+// these are for testing additional tile servers
 var map4Source = new ol.source.OSM ({
 	        attributions: [
         	        new ol.Attribution({
@@ -51,8 +53,8 @@ var map4Source = new ol.source.OSM ({
 
 var nonameSource = new ol.source.OSM ({
 		attribution: new ol.Attribution({
-			        html: 'All maps &copy; <a href="http://fosm.org/">fosm.org</a>'}),
-		url: 'http://map.fosm.org/noname/{z}/{x}/{y}.png'
+			        html: 'All maps &copy; <a href="https://fosm.org/">fosm.org</a>'}),
+		url: 'https://map.fosm.org/noname/{z}/{x}/{y}.png'
 	});
 
 //	console.log ("create noname source");
@@ -67,6 +69,7 @@ var fosmTile = new ol.layer.Tile ({
 //	console.log ("create fosm layer");
 
 /*
+// these are for testing additional tile servers
 var map3Tile = new ol.layer.Tile ({
 		title: "Fosm mapnik 3",
 		type: 'base',
@@ -76,6 +79,7 @@ var map3Tile = new ol.layer.Tile ({
 */
 
 /*
+// these are for testing additional tile servers
 var map4Tile = new ol.layer.Tile ({
 		title: "Fosm mapnik 4",
 		type: 'base',
