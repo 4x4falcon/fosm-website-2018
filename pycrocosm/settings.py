@@ -26,7 +26,7 @@ SECRET_KEY = 'juc)pa31j2p$3t^7u4(f#&1%lf+@09sk8wx%%tg&iazlefvqqh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.freestreetmap.org', '.freestreetmap.net', '.freestreetmap.com', '.freestreetmap.info', '10.0.0.33', '59.167.172.127', '.fosm.org']
+ALLOWED_HOSTS = ['.fosm.org','.freestreetmap.']
 
 # Application definition
 
@@ -106,7 +106,7 @@ DATABASES = {
 		'ENGINE': 'django.db.backends.postgresql',
 		'NAME': 'db_settings',
 		'USER': 'microcosm',
-		'PASSWORD': 'congaaud66',
+		'PASSWORD': 'change_to_password',
 		'HOST': '127.0.0.1',
 		'PORT': '5432',
 	},
@@ -115,7 +115,7 @@ DATABASES = {
 MAP_DATABASE = {
 	'NAME': 'db_map',
 	'USER': 'microcosm',
-	'PASSWORD': 'congaaud66',
+	'PASSWORD': 'change_to_password',
 	'HOST': '127.0.0.1',
 	'PORT': '5432',
 	'PREFIX': "planet_",
